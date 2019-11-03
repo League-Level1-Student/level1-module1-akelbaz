@@ -5,28 +5,36 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class binary implements ActionListener {
-void makeAMethod(){
 	JPanel panel = new JPanel();
-	JTextField field = new JTextField():
+	JTextField field = new JTextField(20);
 JFrame frame = new JFrame();
 JButton button = new JButton();
-frame.add(button);
+JLabel label = new JLabel();
+	void makeAMethod(){
+panel.add(button);
+frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
+frame.setVisible(true);
 frame.add(panel);
 button.addActionListener(this);
 button.setText("convert");
 panel.add(field);
+panel.add(label);
 frame.pack();
 }
 
 @Override
 public void actionPerformed(ActionEvent e) {
 	// TODO Auto-generated method stub
-//convert();	
+String text = field.getText();
+ String ans = convert(text);
+ //System.out.println(ans);
+ label.setText(ans);
 }
 String convert(String input) {
     if(input.length() != 8){
